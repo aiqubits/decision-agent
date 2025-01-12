@@ -1,0 +1,70 @@
+curl -XPOST "https://api.brianknows.org/api/v0/agent/transaction" -d '{
+    "prompt": "transfer 0.1 strk to 0x0389f52BDA13d799e0eD48cAf5bbFA1E8F2610298e5300eE0f5ef1707e54003B on starknet",
+    "address": "0x0721cfe1d8fecbffe35e11db2664517f8630b1ec70a45908f51065e2b766bb30",
+    "chainId": "534e5f5345504f4c4941"
+}' -H "Content-Type: application/json" -H "x-brian-api-key: brian_T5C3eToHVwRIbeZx4"
+
+
+
+curl -XPOST "https://api.brianknows.org/api/v0/agent/transaction" -d '{
+    "prompt": "I want to swap 10 USDC for ETH on base",
+    "address": "0x9319b31838bba444CCeAeD025153a48AD6377471"
+}' -H "Content-Type: application/json" -H "x-brian-api-key: API_KEY"
+
+
+[
+    {
+        "solver": "Brian-Starknet",
+        "action": "transfer",
+        "type": "write",
+        "data": {
+            "description": "You are about to send 1 STRK ($0.39) to 0x0389f52BDA13d799e0eD48cAf5bbFA1E8F2610298e5300eE0f5ef1707e54003B on Starknet.",
+            "steps": [
+                {
+                    "contractAddress": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+                    "entrypoint": "transfer",
+                    "calldata": [
+                        "1600688703723350381862331893644838835076702840170900525795288253002184654907",
+                        "1000000000000000000",
+                        "0"
+                    ]
+                }
+            ],
+            "fromChainId": "SN_MAINNET(custom chainId 4012)",
+            "fromAmount": "1000000000000000000",
+            "fromToken": {
+                "address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+                "symbol": "strk",
+                "decimals": 18
+            },
+            "fromAddress": "0x0721cfe1d8fecbffe35e11db2664517f8630b1ec70a45908f51065e2b766bb30",
+            "toChainId": "SN_MAINNET(custom chainId 4012)",
+            "toAmount": "1000000000000000000",
+            "toAmountMin": "1000000000000000000",
+            "toToken": {
+                "address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+                "symbol": "strk",
+                "decimals": 18
+            },
+            "toAddress": "0x0389f52BDA13d799e0eD48cAf5bbFA1E8F2610298e5300eE0f5ef1707e54003B",
+            "receiver": "0x0389f52BDA13d799e0eD48cAf5bbFA1E8F2610298e5300eE0f5ef1707e54003B"
+        },
+        "extractedParams": {
+            "action": "transfer",
+            "token1": "strk",
+            "chain": "starknet sepolia",
+            "address": "0x0389f52BDA13d799e0eD48cAf5bbFA1E8F2610298e5300eE0f5ef1707e54003B",
+            "amount": "1"
+        },
+        "conversationHistory": [
+            {
+                "sender": "user",
+                "content": "transfer 1 strk to 0x0389f52BDA13d799e0eD48cAf5bbFA1E8F2610298e5300eE0f5ef1707e54003B on starknet sepolia"
+            },
+            {
+                "sender": "brian",
+                "content": "You are about to send 1 STRK ($0.39) to 0x0389f52BDA13d799e0eD48cAf5bbFA1E8F2610298e5300eE0f5ef1707e54003B on Starknet."
+            }
+        ]
+    }
+]
