@@ -27,8 +27,6 @@ const options = {
     apiKey: Deno.env.get("BRIAN_API_KEY"),
 };
 
-
-
 const brian = new BrianSDK(options);
 
 bot.command("consultant", async (ctx: MyContext) => {
@@ -59,7 +57,7 @@ Updated: ${new Date()} ${Date.now()}`)
 
 async function consultant(conversation: MyConversation, ctx: MyContext) {
     while (true) {
-        await ctx.reply("Please enter your question, such as: Explain uniswap v4 compared to v3?");
+        await ctx.reply('Please enter your question, such as: "Explain uniswap v4 compared to v3"?');
         const questionRequest = await conversation.waitFor("message:text");
         const question = questionRequest.message?.text;
         console.log(`${question}`);
@@ -83,7 +81,7 @@ async function consultant(conversation: MyConversation, ctx: MyContext) {
 }
 
 async function transact(conversation: MyConversation, ctx: MyContext) {
-    await ctx.reply("Please enter your trading behavior, such as: Swap 1 strk to usdt");
+    await ctx.reply('Please enter your trading behavior, such as: "Swap 1 strk to usdt"');
     const transactContenetRequest = await conversation.waitFor("message:text");
     const requestContent = transactContenetRequest.message?.text;
 
